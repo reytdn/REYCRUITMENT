@@ -54,13 +54,13 @@ public class SelectJOB extends PARENTapplicant {
             System.out.println();
             System.out.println("AVAILABLE JOBS:");
 
-            if(isGraduate){ // College Graduate sees all
+            if(isGraduate){ 
                 System.out.println("1. Hotel Manager = $1,550");
                 System.out.println("2. Front Desk Receptionist = $697");
                 System.out.println("3. Housekeeper = $650");
                 System.out.println("4. Maintenance Technician = $900");
                 System.out.println("5. Security Officer = $750");
-            } else { // Below College only non-degree jobs
+            } else { 
                 System.out.println("1. Housekeeper = $650");
                 System.out.println("2. Security Officer = $750");
             }
@@ -82,7 +82,7 @@ public class SelectJOB extends PARENTapplicant {
             }
         }
 
-        // 🔹 Food Industry
+
         else if(industryChoice == 2){
             chosenIndustry = "Food Industry";
 
@@ -137,7 +137,7 @@ public class SelectJOB extends PARENTapplicant {
             }
         }
 
-        // 🔹 Healthcare Industry
+
         else if(industryChoice == 3){
             chosenIndustry = "Healthcare Industry";
 

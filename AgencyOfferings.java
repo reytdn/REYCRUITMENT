@@ -6,7 +6,7 @@ public class AgencyOfferings {
 
     public void show(PARENTapplicant app) {
 
-        System.out.println("\n===== AGENCY OFFERINGS =====");
+        System.out.println("===== AGENCY OFFERINGS =====");
         System.out.println("1. Resume & CV Writing ($50)");
         System.out.println("2. Interview Coaching ($60)");
         System.out.print("Choose a service (1-2): ");

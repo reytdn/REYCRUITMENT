@@ -14,7 +14,7 @@ public class MAINrecruitmentsystem {
 
         while(true){
 
-            System.out.println("\n===== MAIN MENU =====");
+            System.out.println("===== MAIN MENU =====");
             System.out.println("1. Add Applicant");
             System.out.println("2. Remove Applicant");
             System.out.println("3. Show Applicant by ID");
@@ -31,30 +31,37 @@ public class MAINrecruitmentsystem {
 
             if(choice == 1){
 
+                System.out.println();
                 System.out.print("Full Name: ");
                 String Name = Input.nextLine();
 
+                System.out.println();
                 System.out.print("Age: ");
                 int Age = Input.nextInt();
                 Input.nextLine();
 
                 if(Age < 18){
+                    System.out.println();
                     System.out.println("===== SORRY YOU ARE BELOW 18 =====");
                     continue;
                 }
 
+                System.out.println();
                 System.out.print("Email: ");
                 String Email = Input.nextLine();
 
+                System.out.println();
                 System.out.print("Phone Number: ");
                 String PhoneNumber = Input.nextLine();
 
+                System.out.println();
                 System.out.println("Educational Attainment Options:");
                 System.out.println("1. College Graduate");
                 System.out.println("2. College Undergraduate");
                 System.out.println("3. Senior High School Graduate");
                 System.out.println("4. Junior High School Graduate");
                 System.out.println("5. Elementary School Graduate");
+                System.out.println();
                 System.out.print("Enter Choice (1-5): ");
                 int eduChoice = Input.nextInt();
                 Input.nextLine();
@@ -66,32 +73,40 @@ public class MAINrecruitmentsystem {
                 else if(eduChoice == 4) EducationalAttainment = "Junior High School Graduate";
                 else if(eduChoice == 5) EducationalAttainment = "Elementary School Graduate";
                 else {
+                    System.out.println();
                     System.out.println("Invalid choice, defaulting to Elementary School Graduate");
                     EducationalAttainment = "Elementary School Graduate";
                 }
 
+                System.out.println();
                 System.out.print("Birth Certificate (yes/no): ");
                 boolean Birth = Input.nextLine().equalsIgnoreCase("yes");
 
+                System.out.println();
                 System.out.print("Valid ID (yes/no): ");
                 boolean ID = Input.nextLine().equalsIgnoreCase("yes");
 
                 String IDType = "";
                 String IDNumber = "";
                 if(ID){
+                    System.out.println();
                     System.out.print("Enter Type of ID: ");
                     IDType = Input.nextLine();
 
+                    System.out.println();
                     System.out.print("Enter Number of ID: ");
                     IDNumber = Input.nextLine();
                 }
 
+                System.out.println();
                 System.out.print("Good Medical Record (yes/no): ");
                 boolean Medical = Input.nextLine().equalsIgnoreCase("yes");
 
+                System.out.println();
                 System.out.print("NBI Clearance (yes/no): ");
                 boolean NBI = Input.nextLine().equalsIgnoreCase("yes");
-
+                
+                System.out.println();
                 System.out.print("Number of Companies Worked: ");
                 int Companies = Input.nextInt();
                 Input.nextLine();
@@ -101,14 +116,16 @@ public class MAINrecruitmentsystem {
                 int HMWorkedMonths = 0;
 
                 for(int i = 0; i < Companies; i++){
+                    System.out.println();
                     System.out.print("Enter Name of Company " + (i+1) + ": ");
                     NamesCompany[i] = Input.nextLine();
 
+                    System.out.println();
                     System.out.print("Enter Months Worked at " + NamesCompany[i] + ": ");
                     WorkedMonths[i] = Input.nextInt();
                     Input.nextLine();
 
-                    HMWorkedMonths += WorkedMonths[i];
+                    HMWorkedMonths = HMWorkedMonths + WorkedMonths[i];
                 }
 
                 PARENTapplicant applicant = new PARENTapplicant(
@@ -120,38 +137,48 @@ public class MAINrecruitmentsystem {
                 applicants.add(applicant);
                 applicantScores.add(0);
 
+                System.out.println();
                 System.out.println("Applicant Saved! ID: " + (applicants.size() - 1));
             }
 
             else if(choice == 2){
-                System.out.print("Enter ID: ");
+                System.out.println();
+                System.out.print("Enter ID Number: ");
                 int id = Input.nextInt();
 
                 if(id >= 0 && id < applicants.size()){
                     applicants.remove(id);
                     applicantScores.remove(id);
+                    System.out.println();
                     System.out.println("Removed.");
                 } else {
+                    System.out.println();
                     System.out.println("Invalid ID.");
                 }
             }
 
             else if(choice == 3){
+                System.out.println();
                 System.out.print("Enter ID: ");
                 int id = Input.nextInt();
 
                 if(id >= 0 && id < applicants.size()){
                     PARENTapplicant app = applicants.get(id);
 
+                    System.out.println();
                     System.out.println("Name: " + app.Name);
                     System.out.println("Age: " + app.Age);
                     System.out.println("Email: " + app.Email);
+                    System.out.println("Phone Number: " + app.PhoneNumber);
+                    System.out.println("Educational Attainment: " + app.EducationalAttainment);
                 } else {
+                    System.out.println();
                     System.out.println("Invalid ID.");
                 }
             }
 
             else if(choice == 4){
+                System.out.println();
                 System.out.print("Enter ID: ");
                 int id = Input.nextInt();
 
@@ -167,15 +194,19 @@ public class MAINrecruitmentsystem {
 
                     applicantScores.set(id, total);
 
-                    System.out.println("Interview Done. Score: " + total);
+                    System.out.println();
+                    System.out.println("Overall Score: " + total);
                 } else {
+                    System.out.println();
                     System.out.println("Invalid ID.");
                 }
             }
 
             else if(choice == 5){
+                System.out.println();
                 System.out.print("Enter ID: ");
                 int id = Input.nextInt();
+                System.out.println();
 
                 if(id >= 0 && id < applicants.size()){
 
@@ -183,7 +214,7 @@ public class MAINrecruitmentsystem {
                     PARENTapplicant app = applicants.get(id);
 
                     if(total >= 24){
-
+                        System.out.println();
                         System.out.println("ALLOWED FOR DEPLOYMENT");
 
                         SelectJOB job = new SelectJOB(app);
@@ -192,16 +223,19 @@ public class MAINrecruitmentsystem {
                         app.showInfo(job);
 
                     } else {
+                        System.out.println();
                         System.out.println("NOT ALLOWED FOR DEPLOYMENT");
                     }
 
                 } else {
+                    System.out.println();
                     System.out.println("Invalid ID.");
                 }
             }
 
 
             else if(choice == 6){
+                System.out.println();
                 System.out.print("Enter Applicant ID for Agency Offerings: ");
                 int id = Input.nextInt();
                 Input.nextLine();
@@ -211,6 +245,7 @@ public class MAINrecruitmentsystem {
                     AgencyOfferings agency = new AgencyOfferings();
                     agency.show(app);  
                 } else {
+                    System.out.println();
                     System.out.println("Invalid ID.");
                 }
             }
@@ -222,3 +257,4 @@ public class MAINrecruitmentsystem {
         }
     }
 }
+            

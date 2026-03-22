@@ -66,11 +66,11 @@ public class PARENTapplicant {
         System.out.println("Weekly Salary: $" + weeklySalary);
         System.out.println("Annual Salary: $" + annualSalary);
 
-        System.out.println("\nPlacement Fee (10%): $" + placementFee);
+        System.out.println("Placement Fee (10%): $" + placementFee);
         System.out.println("Retainer Fee: $" + retainerFee);
         System.out.println("Net Salary (after fees): $" + (monthlySalary - placementFee - retainerFee));
 
-        System.out.println("\nAgency Service Chosen: " + serviceChosen);
+        System.out.println("Agency Service Chosen: " + serviceChosen);
         System.out.println("Policy: Free replacement if employee leaves within 3 months");
     }
 }
