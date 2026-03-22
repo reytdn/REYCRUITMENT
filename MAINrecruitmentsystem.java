@@ -190,7 +190,7 @@ public class MAINrecruitmentsystem {
                     int total = exp.pointsEXP();
 
                     FOURTHinterviewprocess interview = new FOURTHinterviewprocess();
-                    total += interview.interviewpoint();
+                    total = total + interview.interviewpoint();
 
                     applicantScores.set(id, total);
 

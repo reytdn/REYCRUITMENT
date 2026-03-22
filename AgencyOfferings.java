@@ -21,7 +21,7 @@ public class AgencyOfferings {
             app.agencyFee = 60;
         }
 
-        System.out.println("\nAvailable Days:");
+        System.out.println("Available Days:");
         System.out.println("1. Monday");
         System.out.println("2. Wednesday");
         System.out.println("3. Friday");
