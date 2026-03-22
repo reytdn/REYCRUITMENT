@@ -4,7 +4,6 @@ public class AgencyOfferings {
 
     Scanner Input = new Scanner(System.in);
 
-    // Show menu for a specific applicant and store service and fee
     public void show(PARENTapplicant app) {
 
         System.out.println("\n===== AGENCY OFFERINGS =====");
@@ -16,13 +15,12 @@ public class AgencyOfferings {
 
         if(serviceChoice == 1) {
             app.agencyService = "Resume & CV Writing";
-            app.agencyFee = 50;   // store fee in applicant
+            app.agencyFee = 50;  
         } else if(serviceChoice == 2) {
             app.agencyService = "Interview Coaching";
             app.agencyFee = 60;
         }
 
-        // Choose schedule
         System.out.println("\nAvailable Days:");
         System.out.println("1. Monday");
         System.out.println("2. Wednesday");

@@ -189,8 +189,7 @@ public class MAINrecruitmentsystem {
                         SelectJOB job = new SelectJOB(app);
                         job.selectJob();
 
-                        ApplicantInfo info = new ApplicantInfo();
-                        info.showInfo(app, job);
+                        app.showInfo(job);
 
                     } else {
                         System.out.println("NOT ALLOWED FOR DEPLOYMENT");
