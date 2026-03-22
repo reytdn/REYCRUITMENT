@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Spliterator;
 
 public class MAINrecruitmentsystem {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class MAINrecruitmentsystem {
         ArrayList<Integer> applicantScores = new ArrayList<>();
 
         while(true){
-
+            System.out.println();
             System.out.println("===== MAIN MENU =====");
             System.out.println("1. Add Applicant");
             System.out.println("2. Remove Applicant");
@@ -171,6 +172,7 @@ public class MAINrecruitmentsystem {
                     System.out.println("Email: " + app.Email);
                     System.out.println("Phone Number: " + app.PhoneNumber);
                     System.out.println("Educational Attainment: " + app.EducationalAttainment);
+                    System.out.println();
                 } else {
                     System.out.println();
                     System.out.println("Invalid ID.");
@@ -252,6 +254,10 @@ public class MAINrecruitmentsystem {
 
 
             else if(choice == 7){
+                System.out.println();
+                System.out.println("======= REYCRUITMENT =======");
+                System.out.println("------ SYSTEM ENDING ------");
+                System.out.println();
                 break;
             }
         }
