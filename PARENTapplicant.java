@@ -54,7 +54,7 @@ public class PARENTapplicant {
         if(agencyService != null && !agencyService.isEmpty()){
             serviceChosen = agencyService;
         }
-
+        System.out.println();
         System.out.println("===== FINAL DEPLOYMENT INFO =====");
         System.out.println("Name: " + Name);
         System.out.println("Email: " + Email);
@@ -72,5 +72,6 @@ public class PARENTapplicant {
 
         System.out.println("Agency Service Chosen: " + serviceChosen);
         System.out.println("Policy: Free replacement if employee leaves within 3 months");
+        System.out.println();
     }
 }

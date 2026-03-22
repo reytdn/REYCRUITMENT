@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Spliterator;
 
 public class MAINrecruitmentsystem {
     public static void main(String[] args) {
