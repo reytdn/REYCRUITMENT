@@ -39,16 +39,24 @@ public class PARENTapplicant {
         this.HMWorkedMonths = HMWorkedMonths;
     }
 
-    public void showInfo(SelectJOB job){
+    private double weekly(double jobSalary){
+        return jobSalary / 4;
+    }
+    private double monthly(double jobSalary){
+        return jobSalary;
+    }
+    private double annually(double jobSalary){
+        return jobSalary * 12;
+    }
 
-        SalaryCalculator sc = new SalaryCalculator();
+    public void showInfo(SelectJOB job){
 
         double placementFee = job.jobSalary * 0.10;
         double retainerFee = 100;
 
-        double monthlySalary = sc.monthly(job.jobSalary);
-        double weeklySalary = sc.weekly(job.jobSalary);
-        double annualSalary = sc.annually(job.jobSalary);
+        double monthlySalary = monthly(job.jobSalary);
+        double weeklySalary = weekly(job.jobSalary);
+        double annualSalary = annually(job.jobSalary);
 
         String serviceChosen = "NONE"; 
         if(agencyService != null && !agencyService.isEmpty()){
@@ -67,11 +75,13 @@ public class PARENTapplicant {
         System.out.println("Annual Salary: $" + annualSalary);
 
         System.out.println("Placement Fee (10%): $" + placementFee);
-        System.out.println("Retainer Fee: $" + retainerFee);
-        System.out.println("Net Salary (after fees): $" + (monthlySalary - placementFee - retainerFee));
+        System.out.println("Retainer Fee: $" + retainerFee); 
+        System.out.println("Net Salary (after fees): $" + (monthlySalary - placementFee - retainerFee - agencyFee));
 
         System.out.println("Agency Service Chosen: " + serviceChosen);
+        System.out.println("Agency Service Fee: $" + agencyFee);  
+        System.out.println("Agency Service Schedule: " + agencySchedule);
         System.out.println("Policy: Free replacement if employee leaves within 3 months");
         System.out.println();
+        }
     }
-}
